@@ -17,7 +17,7 @@ Category: Cloud Computing Service
 ## Purposes
 
 ### Large and Easy
-Large computing capacity without needing to maintain it yourself; Amazon takes care of all maintenance. 
+Creates large computing server capacity without needing to maintain them yourself; Amazon takes care of all maintenance. 
 
 ### AMIs
 Amazon Machine Images, VM configurers that essentially allow the loading of diff kinds of apps in an 'instance'. Users can create, delete, and manage instances as they desire, you can launch as many instances off of an AMI as you want. 
