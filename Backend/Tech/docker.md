@@ -36,6 +36,14 @@ docker exec -it container_id bash [Runs a bash shell (if possible) on your conta
 
 ### Volumes, Env, and Dependency
 
+### Docker files
+
+#### Good Practices
+
+Copying - Always copy into a folder, not COPY . .
+
+Run vs CMD - CMD is exactly like the run function, however CMD tells the Dockerfile that this is the 'ultimate' run command, or what the service is dependent on the success of; this way Docker knows to end or report when this CMD run goes awry
+
 ### Docker-compose
 
 What does it do?: Automates many lines of docker, and simplifies a lot of the service setup based on its service configs. Great for scaling, as it can start/stop all container services with one liners.
