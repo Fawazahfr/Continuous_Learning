@@ -20,4 +20,18 @@
 
 ### Rules
 
-<ins>Declare and Use</ins>: When you initialize or declare a variable in Go, you have to use it. There are no hanging or floating variables
+<ins>Declare and Use</ins>: When you initialize or declare a variable in Go, you have to use it. There are no hanging variables in Go.
+
+### Cool Features
+
+<ins>Make Command</ins>: Many objects and data types can be instantiated using the make command, like maps, arrays, dictionaries, etc.
+
+<ins>Vendoring</ins>: You can init a mod file in your repo that can list dependencies that can easily be grabbed from github through 'go mod vendor' or individually through 'go get "dependency"' that then adds that item to the go mod file. This means you don't need a package manager in Go to get all of your dependencies. 
+
+### Useful Default Packages
+
+<ins>HTTP</ins>: Go comes with a very useful http package library that allows for many useful functions like routing, http event handling, etc. that makes REST api work much easier.
+
+<ins>Gomock</ins>: You can easily install create mocks for testing using gomock, which is an intelligent automation of mock testable data types for specific tests you've created. 
+
+<ins>Gotests</ins>: Works well with gomock, go tests allows you to create tests (unit, integration, etc. but usually unit) that can be run all at once with an easy test command, allowing a user to ensure regression compatability constantly, and check is small changes don't break everything. It also uses a file name system that allows you to modularize tests and code and various requirements, and helps to ensure that all lines of code are being tested. 
