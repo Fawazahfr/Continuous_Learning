@@ -35,3 +35,11 @@
 <ins>Gomock</ins>: You can easily install create mocks for testing using gomock, which is an intelligent automation of mock testable data types for specific tests you've created. 
 
 <ins>Gotests</ins>: Works well with gomock, go tests allows you to create tests (unit, integration, etc. but usually unit) that can be run all at once with an easy test command, allowing a user to ensure regression compatability constantly, and check is small changes don't break everything. It also uses a file name system that allows you to modularize tests and code and various requirements, and helps to ensure that all lines of code are being tested. 
+
+### What Does This Mean
+
+**<-**: This is essentially queueing into the channel to the left of the arrow. If there is nothing to the right, it is like a 'halt and wait for a queue item to come in' line
+
+**Context**: A context is simply a type that carries cancel signals, timed deadlines, and other request-based values and communication between processes and through different APIs. Incoming requests coming to a server should create a context that sets the configurations for that request, and outgoing calls to servers should accept a context to work with. Function calls between two servers must work within the context, and can spawn child contexts from that context. But if the parent context gets cancelled, so do all the children and resources allocated to it. 
+
+**Defer Function**: A defer function is a function whose arguments and setep is evaluated and prepared as soon as it is read, but it does not exectue immediately; rather it is deferred to activating until the function after it executes. Useful for example with cancelling a context after it is utilized in some communication. 

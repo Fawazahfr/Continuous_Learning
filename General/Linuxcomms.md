@@ -1,5 +1,9 @@
 # Linux Commands and Shell Scripting
 
+## Frequent Commands
+
+**Deletion (rm and rmdir)** - 
+
 ## Syntax/Operators
 
 **"|" vertical bar character** - The vertical bar character represents piping, or redirection occurring in a Linux command.
