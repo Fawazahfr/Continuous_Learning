@@ -2,7 +2,9 @@
 
 ## Frequent Commands
 
-**Deletion (rm and rmdir)** - 
+**Deletion (rm and rmdir)** - Used to remove something. Use option -r after command and before the folder/file to recursively remove that and everything underneath it.
+
+**Finding execs (which)** - The which commmand can be used to find where an executable has been stored. For instance, "which go" would tell you the location of the go executable
 
 ## Syntax/Operators
 
