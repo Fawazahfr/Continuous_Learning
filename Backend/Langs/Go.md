@@ -43,3 +43,16 @@
 **Context**: A context is simply a type that carries cancel signals, timed deadlines, and other request-based values and communication between processes and through different APIs. Incoming requests coming to a server should create a context that sets the configurations for that request, and outgoing calls to servers should accept a context to work with. Function calls between two servers must work within the context, and can spawn child contexts from that context. But if the parent context gets cancelled, so do all the children and resources allocated to it. 
 
 **Defer Function**: A defer function is a function whose arguments and setep is evaluated and prepared as soon as it is read, but it does not exectue immediately; rather it is deferred to activating until the function after it executes. Useful for example with cancelling a context after it is utilized in some communication. 
+
+## Testing in Go
+
+### Gotests
+
+Go has built in testing using go tests. Any directory can only have one package within it. The only exception is the package_test package, which tests the initial package.
+
+To create tests that are detected by Go tests, the function name of the test must begin with "Test" like TestThisFunction, and then the bash command "go test" will properly run it.
+
+The use of interfaces is very popular and useful in testing Go functions
+
+1. Rather than feeding the function the arg type that you want specifically, create an interface that matches that arg type, so you can test the function with no side effects that may slow down unit testing, such as needing to actually start a server up. 
+   e.g: You have a function that shuts down a server, so you create a shutdownable interface so you can test the shutdown functionality without needing to open an http server 
