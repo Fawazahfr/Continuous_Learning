@@ -1,1 +1,4 @@
-chi router - Easy to setup router with different types of middleware that can be very useful
+chi router ("github.com/go-chi/chi") - Easy to setup router with different types of middleware that can be very useful
+asserts ("github.com/stretchr/testify/assert") - C like assert statements for testing
+
+
