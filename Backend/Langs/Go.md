@@ -16,6 +16,10 @@
 
 <ins>Kubernetes and Docker</ins>: Docker and Kubernetes are both made with Go, and exemplify how the threading of Go can allow for marvelous backend apps and fluid app deployment in various circumstances, with many complex processes happening at the same time. The distrib. systems community has embraced Go.
 
+### Project Structures
+
+<ins>Internal Folder</ins>: Other than vendor folder, the only other special folder in Go; protects your business logic and disallows other projects from accessing this folder when they vendor your project. 
+
 ## Lang Details
 
 ### Rules
@@ -27,6 +31,12 @@
 <ins>Make Command</ins>: Many objects and data types can be instantiated using the make command, like maps, arrays, dictionaries, etc.
 
 <ins>Vendoring</ins>: You can init a mod file in your repo that can list dependencies that can easily be grabbed from github through 'go mod vendor' or individually through 'go get "dependency"' that then adds that item to the go mod file. This means you don't need a package manager in Go to get all of your dependencies. 
+
+<ins>Go Routines</ins>: Go routines make concurrent programming super cool in Go. Essentially, major threads usually run per core on a computer, but goroutines are these tiny threads that can be run from those threads, so much lighter means of having concurrent programming.
+
+**How it works**: Go chooses which threads to launch your go routines off of which would work best for your processing system. It also optimizes your threads by effectively moving the goroutines around between threads in the background. Go worries about this all so you don't have to. 
+
+**Control**: You need to sometimes influence and manage goroutines yourself using some built in libraries in Go, such as sync library > wait group, that groups goroutines together such that programs can wait for them.
 
 ### Useful Default Packages
 
@@ -56,3 +66,10 @@ The use of interfaces is very popular and useful in testing Go functions
 
 1. Rather than feeding the function the arg type that you want specifically, create an interface that matches that arg type, so you can test the function with no side effects that may slow down unit testing, such as needing to actually start a server up. 
    e.g: You have a function that shuts down a server, so you create a shutdownable interface so you can test the shutdown functionality without needing to open an http server 
+
+### Testing REST API
+
+The built in HTTP and HTTPtest packages are extremely helpful in this regard.
+
+The most basic setup is to create a httptest.NewRecorder as a faux Writer, and use http.NewRequest as a faux request. 
+You can cast your handler functions as http.HandlerFunc, which can then use ServeHTTP with a request and writer to get a response, which the recorder tracks and can use.
